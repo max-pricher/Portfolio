@@ -1,0 +1,100 @@
+body {
+    background-color: #e0afa0;
+}
+
+/* dark green, redish brown, light green, light peach, peach */
+/* 36382E, 8e4a49, aac0af, e0afa0, e0a890 */
+
+nav {
+    background-color: #8e4a49;
+    margin: auto;
+    padding: 10px;
+    /* center the nav bar */
+}
+
+html {
+    font-family: "hagrid", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #aac0af;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #aac0af;
+    text-decoration: underline;
+}
+
+nav a:visited {
+    color: #e0afa0;
+}
+
+.banner-image {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.invert:hover {
+    filter: invert(100%);
+}
+
+.main-heading {
+    text-align: center;
+}
+
+.artist-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px;
+}
+
+.artist-photo {
+    width: 100px;
+}
+
+.artist-photo:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    font-size: 31.25px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+small {
+    font-size: 12px;
+}
+
+footer {
+    background-color: #aac0af;
+    text-align: center;
+    padding: 20px;
+}
