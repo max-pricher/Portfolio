@@ -1,3 +1,12 @@
+:root {
+    --dark-green: #36382E;
+    --main-nav: #8e4a49;
+    --blog-nav: #8e4a49;
+    --light-green: #aac0af;
+    --light-peach: #e0afa0;
+    --peach: #e0a890;
+}
+
 body {
     background-color: #e0afa0;
 }
@@ -5,10 +14,21 @@ body {
 /* dark green, redish brown, light green, light peach, peach */
 /* 36382E, 8e4a49, aac0af, e0afa0, e0a890 */
 
-nav {
-    background-color: #8e4a49;
+.main-nav {
+    background-color: var(--main-nav);
     margin: auto;
     padding: 10px;
+    width: 80vw;
+    border-radius: 5px;
+    /* center the nav bar */
+}
+
+.blog-nav {
+    background-color: var(--blog-nav);
+    margin: auto;
+    padding: 10px;
+    width: 60vw;
+    border-radius: 5px;
     /* center the nav bar */
 }
 
@@ -28,18 +48,18 @@ nav ul {
 }
 
 nav a {
-    color: #aac0af;
+    color: var(--light-green);
     font-size: 20px;
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #aac0af;
+    color: var(--light-green);
     text-decoration: underline;
 }
 
 nav a:visited {
-    color: #e0afa0;
+    color: var(--light-peach);
 }
 
 .banner-image {
@@ -94,7 +114,7 @@ small {
 }
 
 footer {
-    background-color: #aac0af;
+    background-color: var(--light-green);
     text-align: center;
     padding: 20px;
 }
