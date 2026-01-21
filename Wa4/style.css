@@ -77,6 +77,10 @@ nav a:visited {
     text-align: center;
 }
 
+.sub-heading {
+    text-align: center;
+}
+
 .artist-photos {
     display: flex;
     flex-wrap: wrap;
