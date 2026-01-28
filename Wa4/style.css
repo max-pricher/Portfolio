@@ -85,6 +85,7 @@ nav a:visited {
 
 .small-photo {
     width: 200px;
+    height: auto;
     display: block;
     margin: 10px auto;
     align-self: center
