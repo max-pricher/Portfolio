@@ -226,32 +226,7 @@
                     <p>I modified my intital code and instead nested my pinState detection within a while loop, this
                         ensures that waiting is only printed once. </p>
 
-                    <p>
-                        const int LEDPIN = 10;
-                        const int BUTTONPIN = 9;
-                        // the setup function runs once when you press reset or power the board
-                        void setup() {
-                        // initialize digital pin LED_BUILTIN as an output.
-                        pinMode(LEDPIN, OUTPUT);
-                        pinMode(BUTTONPIN, INPUT);
-                        Serial.begin(115200);
-                        }
-
-                        // the loop function runs over and over again forever
-                        void loop() {
-                        bool pinState = digitalRead(BUTTONPIN);
-                        digitalWrite(LEDPIN,LOW);
-                        Serial.println("Waiting for you...");
-                        while(!pinState)
-                        {
-                        delay(100);
-                        pinState = digitalRead(BUTTONPIN);
-                        }
-                        digitalWrite(LEDPIN,HIGH);
-                        Serial.println("ok thanks!");
-                        delay(100);
-                        }
-                    </p>
+                    <script src="https://gist.github.com/max-pricher/947f1d0d7c5f5627f0d0ce9c6cb9f24e.js"></script>
 
                     <video class="video-block" controls width="400">
                         <source src="../photos/lab-2/serial-button.MOV" type="video/mp4">
