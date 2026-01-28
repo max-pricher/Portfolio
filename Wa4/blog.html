@@ -31,7 +31,6 @@
     </header>
 
     <main>
-
         <h1 class="main-heading header-font">Welcome to Max's Object Blog</h1>
         <h2 class="sub-heading header-font">This is the place where I will showcase my design process for my 2026
             projects.</h2>
@@ -46,94 +45,99 @@
             </ul>
         </nav>
 
-        <div class="project-container">
-            <div class="project-card">
-                <h2 class="header-font" id="project1">Project 1: Simple Circuits</h2>
-                <div class=" material-list">
-                    <h3>Material list</h3>
-                    <ul>
-                        <li>Power Delivery Breadboard</li>
-                        <li>9v</li>
-                        <li>Multimeter</li>
-                        <li>Push button</li>
-                        <li>220&Omega; resistor</li>
-                        <li>100&Omega; resistor (in theory)</li>
-                        <li>Red LED</li>
-                        <li>Breadboard</li>
-                    </ul>
+        <div class="content-spacer">
+
+            <div class="project-container">
+                <div class="project-card">
+                    <h2 class="header-font" id="project1">Project 1: Simple Circuits</h2>
+                    <div class=" material-list">
+                        <h3>Material list</h3>
+                        <ul>
+                            <li>Power Delivery Breadboard</li>
+                            <li>9v</li>
+                            <li>Multimeter</li>
+                            <li>Push button</li>
+                            <li>220&Omega; resistor</li>
+                            <li>100&Omega; resistor (in theory)</li>
+                            <li>Red LED</li>
+                            <li>Breadboard</li>
+                        </ul>
+                    </div>
+                    <p>For this first Lab we learned the basics of simple circuits. First I used my multimeter to test
+                        my 9V
+                        battery, I got a reading of 9.1V.</p> <img class="small-photo"
+                        src="../photos/lab-1/9V-battery-test.webp" alt="Multimeter reading of 9V">
+                    <p>I
+                        then set up my power delivery board. I tested my left power line, and got a reading of 3.3V.</p>
+                    <img class="small-photo" src="../photos/lab-1/3.3v-Rail-Test.webp"
+                        alt="Multimeter reading right power rail">
+                    I then tested the right 5V power rail, getting a reading of 5V.
+                    <img class="small-photo" src="../photos/lab-1/5v-Rail-Test.webp"
+                        alt="Multimeter reading left power rail">
+                    <p>
+                        I have my own large electornics kit that I've used over the years and unfortunatley I only had a
+                        220&Omega; resistor. Please forgvie me, I promise you im a circuit god. 3.3V divided by
+                        220&Omega;s,
+                        this
+                        gave me 15mA which I knew was still above the
+                        forward current. I then wired up my circuit with the 220&Omega; resistor wired to the cathode
+                        and
+                        the
+                        ground line, I then used a jumper between the power rail and the anode.</p>
+                    <div class="photo-group">
+                        <img class="small-photo" src="../photos/lab-1/3.3v led.webp" alt="Simple Circuit 3.3v">
+
+                        <img class="small-photo" src="../photos/lab-1/simple-led-circuit-diagram.webp"
+                            alt="Simple Circuit diagram">
+                    </div>
+                    <p>
+                        If we wanted to power the LED with a 5v source, with a goal of 25mA, then we would need a
+                        200&Omega;
+                        resitor, this is perfect as the lowest resistor I currently have is 220&Omega;.</p>
+                    <img class="small-photo" src="../photos/lab-1/5.5V.webp" alt="Simple Circuit 5v">
+                    <p>Lastly, I switched back to the 3.3V circuit,
+                        then added a button in series to control the power flow.</p>
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-1/Led-Button-Test.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <h2 class="extra-credit-header header-font">Extra Volt</h2>
+                    <p>For this I created a circuit that would naturally power the LED, and then I added a button in
+                        parallel so that when pressed, the circuit 'shorts' and the power goes through the button
+                        instead.
+                        The opperator this demonstrates is the ! not operator.
+                    </p>
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-1/Lab-1-Extra-Volt.MOV" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <p>For this first Lab we learned the basics of simple circuits. First I used my multimeter to test
-                    my 9V
-                    battery, I got a reading of 9.1V.</p> <img class="small-photo"
-                    src="../photos/lab-1/9V-battery-test.webp" alt="Multimeter reading of 9V">
-                <p>I
-                    then set up my power delivery board. I tested my left power line, and got a reading of 3.3V.</p>
-                <img class="small-photo" src="../photos/lab-1/3.3v-Rail-Test.webp"
-                    alt="Multimeter reading right power rail">
-                I then tested the right 5V power rail, getting a reading of 5V.
-                <img class="small-photo" src="../photos/lab-1/5v-Rail-Test.webp"
-                    alt="Multimeter reading left power rail">
-                <p>
-                    I have my own large electornics kit that I've used over the years and unfortunatley I only had a
-                    220&Omega; resistor. Please forgvie me, I promise you im a circuit god. 3.3V divided by 220&Omega;s,
-                    this
-                    gave me 15mA which I knew was still above the
-                    forward current. I then wired up my circuit with the 220&Omega; resistor wired to the cathode and
-                    the
-                    ground line, I then used a jumper between the power rail and the anode.</p>
-                <div class="photo-group">
-                    <img class="small-photo" src="../photos/lab-1/3.3v led.webp" alt="Simple Circuit 3.3v">
 
-                    <img class="small-photo" src="../photos/lab-1/simple-led-circuit-diagram.webp"
-                        alt="Simple Circuit diagram">
+                <div class="project-card">
+                    <h2 class="header-font" id="project2">Project 2: ????</h2>
+                    <div class=" material-list">
+                        <h3>Material list</h3>
+                        <ul>
+                            <li>N/A</li>
+                            <li>N/A</li>
+                            <li>N/A</li>
+                            <li>N/A</li>
+                            <li>N/A</li>
+                        </ul>
+                    </div>
+                    <p>text</p>
+                    <h2 class="extra-credit-header header-font">Extra Volt</h2>
+                    <p>extra volt</p>
                 </div>
-                <p>
-                    If we wanted to power the LED with a 5v source, with a goal of 25mA, then we would need a 200&Omega;
-                    resitor, this is perfect as the lowest resistor I currently have is 220&Omega;.</p>
-                <img class="small-photo" src="../photos/lab-1/5.5V.webp" alt="Simple Circuit 5v">
-                <p>Lastly, I switched back to the 3.3V circuit,
-                    then added a button in series to control the power flow.</p>
-                <video class="video-block" controls width="400">
-                    <source src="../photos/lab-1/Led-Button-Test.MOV" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
-                <h2 class="extra-credit-header header-font">Extra Volt</h2>
-                <p>For this I created a circuit that would naturally power the LED, and then I added a button in
-                    parallel so that when pressed, the circuit 'shorts' and the power goes through the button
-                    instead.
-                    The opperator this demonstrates is the ! not operator.
-                </p>
-
-                <video class="video-block" controls width="400">
-                    <source src="../photos/lab-1/Lab-1-Extra-Volt.MOV" type="video/mp4">
-
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="project-card">
-                <h2 class="header-font" id="project2">Project 2: ????</h2>
-                <div class=" material-list">
-                    <h3>Material list</h3>
-                    <ul>
-                        <li>N/A</li>
-                        <li>N/A</li>
-                        <li>N/A</li>
-                        <li>N/A</li>
-                        <li>N/A</li>
-                    </ul>
-                </div>
-                <p>text</p>
-                <h2 class="extra-credit-header header-font">Extra Volt</h2>
-                <p>extra volt</p>
             </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Max's Portfolio</p>
     </footer>
-
 </body>
 
 </html>
