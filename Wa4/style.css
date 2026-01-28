@@ -98,6 +98,12 @@ nav a:visited {
     font-style: normal;
 }
 
+.part-header {
+    font-family: "reiher-headline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .photo-group {
     display: flex;
     justify-content: center;

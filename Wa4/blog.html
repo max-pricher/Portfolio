@@ -117,26 +117,183 @@
                 </div>
 
                 <div class="project-card">
-                    <h2 class="header-font" id="project2">Project 2: ????</h2>
+                    <h2 class="header-font" id="project2">Project 2: React-I/O-n</h2>
                     <div class=" material-list">
                         <h3>Material list</h3>
                         <ul>
-                            <li>N/A</li>
-                            <li>N/A</li>
-                            <li>N/A</li>
-                            <li>N/A</li>
-                            <li>N/A</li>
+                            <li>Arduino Uno R4</li>
+                            <li>USB-C Cable</li>
+                            <li>Button</li>
+                            <li>Breadboard</li>
+                            <li>Resistors</li>
+                            <li>LED's</li>
+                            <li>Multimeter</li>
                         </ul>
                     </div>
-                    <p>text</p>
+                    <h2 class="part-header">Part 1:</h2>
+                    <p>Before I started this project I made sure to Ground myself as I shocked myself earlier today on a
+                        door. Thankfully my arduino has a plastic base so it can't be shorted on a metal surface. I
+                        already have the IDE downloaded so everything was set up. I plugged in my Arduino UNO R4,
+                        updated my libraries, then selected the right board. I then opened the blink example and
+                        uploaded it to my arduino</p>
+
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-2/Arduino-Blink.mov" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <h2 class="part-header">Part 2:</h2>
+                    <p>Now I want to make an external LED blink. I choose pin 10 and set it's pinmode to output. I then
+                        wrote my loop so that it sets digital write pin 10 to high for a second, then to digital write
+                        low for a
+                        second. I then started to make my circuit, I chose a Red LED and connected it's cathode to the
+                        ground via a 220&Omega; resistor. With my arduino unplugged, I connected the ground pin the my
+                        breadboard ground using a jumper wire, I repeated this with the 5v connections. My last step was
+                        to connect the Annode to the power rail, I did this, uploaded my program. Once it was uploaded I
+                        realized my silly mistake, I had connected the LED to the Arduino 5v line, when in reality it
+                        should've been pin 10. I swapped the pins and everything worked!</p>
+
+                    <video class=" video-block" controls width="400">
+                        <source src="../photos/lab-2/Ext-LED-Blink.mov" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <p>I then decided to make a shorter, uneven blink. I decided to have it on longer than it was
+                        off so
+                        I set the low delay to 500ms, this wasn't super noticeable so I reduced to to 100ms.</p>
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-2/quick-blink.mov" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <h2 class="part-header">Part 3:</h2>
+
+                    <p>Now we need to convert this to control and LED through button press. Based on the diagram in
+                        our
+                        lab document, pin 7 will normally be 0V as it's pulled down to ground, but due to the
+                        extreme
+                        resistance, whenever the button is pressed it will go to 5V. I will use this to control the
+                        LED.
+                        If we didn't have a connection to ground, then the pin will be floating and will pickup
+                        random
+                        electrical interference. Additionally, if the button loop had no resistor in series, then it
+                        would easily short circuit and generate a ton of heat. So for my setup, I connected the
+                        button
+                        to pin 9 and to ground through a 10k&Omega; resistor. I then connected the 5V rail to the
+                        other
+                        side of the button.
+                        For the LED, I connected the cathode to ground through a 220&Omega; resistor, and the anode
+                        to
+                        pin 10. </p>
+
+                    <img class="small-photo" src="../photos/lab-2/Button-setup.JPG" alt="Simple Circuit diagram">
+
+
+                    <p>
+                        I then wrote the code so that each loop we check the state of the button and then apply
+                        it to the LED via pin 10. I had to set pin 9 to input so we can detect the button state. I
+                        then
+                        used digitalRead(9), to get the pin state and then used digitalWrite(10, buttonState) to set
+                        the
+                        LED state. I also added some print statments to print the button state just to make sure
+                        everything was working. I made sure to add a slight delay to my loop to avoid any bugs.
+                        unfortunatley when I uplaoded the code the LED was on which shouldnt be the case, I added
+                        some
+                        print statments to give me an idea of what section of the if statment I was in. After this I
+                        realized that I was passing the pin number to the if statment, rather than my pinState bool
+                        which I only intialized. After fixing this my circuit worked perfectly!
+                    </p>
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-2/Button-LED.mov" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <p>For the serial output part of this assignment, I choose to print the message "hiii prof" to
+                        the
+                        serial monitor. At first I used a lowercase 's' in Serial so it didn't work but after fixing
+                        this
+                        it worked perfectly.</p>
+
+                    <img class="small-photo" src="../photos/lab-2/Serial-Output.png" alt="Simple Circuit diagram">
+
+                    <p>I modified my intital code and instead nested my pinState detection within a while loop, this
+                        ensures that waiting is only printed once. </p>
+
+                    <p>
+                        const int LEDPIN = 10;
+                        const int BUTTONPIN = 9;
+                        // the setup function runs once when you press reset or power the board
+                        void setup() {
+                        // initialize digital pin LED_BUILTIN as an output.
+                        pinMode(LEDPIN, OUTPUT);
+                        pinMode(BUTTONPIN, INPUT);
+                        Serial.begin(115200);
+                        }
+
+                        // the loop function runs over and over again forever
+                        void loop() {
+                        bool pinState = digitalRead(BUTTONPIN);
+                        digitalWrite(LEDPIN,LOW);
+                        Serial.println("Waiting for you...");
+                        while(!pinState)
+                        {
+                        delay(100);
+                        pinState = digitalRead(BUTTONPIN);
+                        }
+                        digitalWrite(LEDPIN,HIGH);
+                        Serial.println("ok thanks!");
+                        delay(100);
+                        }
+                    </p>
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-2/serial-button.MOV" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <p>I noticed that the button oscillates when I press it once, this is due to the speed that we
+                        check
+                        the button state, how long im holding the button and the fact the program loops as soon as a
+                        press is detected. If I added a variable that checks if the
+                        button has been pressed, then i can apply that so that I stay within the while loop.</p>
+
+                    <h2 class="part-header">Part 4:</h2>
+
+                    <p>I now need to program a game in which an LED will turn on after a random time interval, the
+                        player will try to press the button as soon as they notice. I setup my program so that it
+                        welcomes you within the setup, then inside the loop is all my game round logic. I've used
+                        random
+                        before so I choose an empty pin to generate a random seed, I print ready and then start the
+                        LED
+                        delay, once the delay ends the program imediatley enters a while loop that will only
+                        terminate
+                        when the button is pressed. Outside of the while loop once the button is pressed, it will
+                        output
+                        the total milliseconds it took for you to react to the LED. Lastly, the program waits 5
+                        second
+                        and starts another round/loop.</p>
+
                     <h2 class="extra-credit-header header-font">Extra Volt</h2>
-                    <p>extra volt</p>
+                    <p>The first thing I modified for this was adding distinct button state variables. I also
+                        removed
+                        the mechanism for tracking how much time the reaction was. Once either button has been
+                        pressed,
+                        and if statement checks which button was pressed and prints a message congradulating the
+                        relevant player. The program then waits 5 seconds before starting again.</p>
                 </div>
             </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Max's Portfolio</p>
+        <p>&copy; 2026 Max's Portfolio</p>
     </footer>
 </body>
 
