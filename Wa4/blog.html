@@ -38,17 +38,53 @@
 
         <div class="project-container">
             <div class="project-card">
-                <h3 id="project1">Project 1: Sustainable Chair Design</h3>
-                <p>This project focuses on creating a chair using eco-friendly materials and innovative design
-                    techniques.</p>
-                <div class="material-list">
+                <h3 id="project1">Project 1: Simple Circuits</h3>
+                <p>For this first Lab we learned the basics of simple circuits. First I used my multimeter to test my 9V
+                    battery, I got a reading of 9.1V. <img src="images/project1.jpg" alt="Multimeter reading of 9V"> I
+                    then set up my power delivery board, my right power line reading at 3.3V and my left one at 5V. <img
+                        src="images/project1.jpg" alt="Multimeter reading right power rail">
+                    <img src="images/project1.jpg" alt="Multimeter reading left power rail">
+                    I have my own large electornics kit that I've used over the years and unfortunatley i only had a
+                    220ohm resistor. 3.3V divided by 220 ohms gave me, this gave me 15mA which I knew was still above
+                    the forward current. I then wired up my circuit with the 220ohm resistor wired to the cathode and
+                    the ground line, I then used a jumper between the power rail and the anode. <img
+                        src="photos/lab-1/simple" alt="Simple Circuit 3.3v">
+
+                    <img class="small-photo" src="../photos/lab-1/simple-led-circuit-diagram.png"
+                        alt="Simple Circuit diagram">
+
+
+
+                    If we wanted to power the LED with a 5v source, with a goal of 25mA, then we would need a 200ohm
+                    resitor, this is perfect as the lowest resistor I currently have is 220ohm.
+                    <img src="photos/lab-1/simple" alt="Simple Circuit 5v"> Lastly, I switched back to the 3.3V circuit,
+                    then added a button in series to control the power flow.
+
+                    <video controls width="400">
+                        <source src="myVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </p>
+                <h2 class="extra-credit-header">Extra Volt</h2>
+                <p>For this I created a circuit that would naturally power the LED, and then I added a button in
+                    parallel so that when pressed the circuit 'shorts' and the power goes through the button instead.
+                    The opperator this demonstrates is the ! not operator.
+                </p>
+
+                <video controls width="400">
+                    <source src="myVideo.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+
+                <div class=" material-list">
                     <h3>Material list</h3>
                     <ul>
-                        <li>Arduino uno R4</li>
-                        <li>Supply 2</li>
-                        <li>Supply 3</li>
-                        <li>Supply 4</li>
-                        <li>Supply 5</li>
+                        <li>Power source (I used my arduino 5v and GND)</li>
+                        <li>Push button</li>
+                        <li>330ohm resistor</li>
+                        <li>Red LED</li>
+                        <li>Breadboard</li>
                     </ul>
                 </div>
             </div>

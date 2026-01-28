@@ -77,6 +77,12 @@ nav a:visited {
     text-align: center;
 }
 
+.small-photo {
+    width: 200px;
+    display: block;
+    margin: 10px auto;
+}
+
 .sub-heading {
     text-align: center;
 }
