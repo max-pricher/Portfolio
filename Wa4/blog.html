@@ -254,14 +254,23 @@
                         output
                         the total milliseconds it took for you to react to the LED. Lastly, the program waits 5
                         second
-                        and starts another round/loop.</p>
+                        and starts another round/loop. I ran into two problems after finishing the draft of my code, I
+                        called my random seed in my loop which caused the random seed to restart and call the same
+                        number. My last error was that I had my startTime and millis() swapped causing an overflow
+                        error. once I fixed these my game worked perfectly, I got a little to into it...</p>
+
+                    <video class="video-block" controls width="400">
+                        <source src="../photos/lab-2/button-game.mov" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
 
                     <h2 class="extra-credit-header header-font">Extra Volt</h2>
                     <p>The first thing I modified for this was adding distinct button state variables. I also
                         removed
                         the mechanism for tracking how much time the reaction was. Once either button has been
-                        pressed,
-                        and if statement checks which button was pressed and prints a message congradulating the
+                        pressed, an if statement checks which button was pressed and prints a message congradgulating
+                        the
                         relevant player. The program then waits 5 seconds before starting again.</p>
                 </div>
             </div>
