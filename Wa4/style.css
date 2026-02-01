@@ -92,6 +92,14 @@ nav a:visited {
     align-self: center
 }
 
+.medium-photo {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    align-self: center
+}
+
 .header-font {
     font-family: "reiher-headline", sans-serif;
     font-weight: 400;
