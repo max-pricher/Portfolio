@@ -145,13 +145,14 @@
                             <li>Jumper Wires</li>
                         </ul>
                     </div>
-                    <p>Now I want to make an external LED blink. I choose pin 10 and set it's pinmode to output. I then
-                        wrote my loop so that it sets digital write pin 10 to high for a second, then to digital write
-                        low for a
-                        second. I then started to make my circuit, I chose a Red LED and connected it's cathode to the
-                        ground via a 220&Omega; resistor. With my arduino unplugged, I connected the ground pin the my
-                        breadboard ground using a jumper wire, I repeated this with the 5v connections. My last step was
-                        to connect the Annode to the power rail, I did this, uploaded my program. Once it was uploaded I
+                    <p>Now I want to make an external LED blink. I chose pin 10 and set it's pinmode to output. I then
+                        wrote my loop so that it sets pin 10 to high for a second, then to low for a
+                        second. I then started to set-up my circuit, I chose a Red LED and connected it's cathode to the
+                        ground via a 220&Omega; resistor. With my arduino unplugged, I connected the ground pin to my
+                        breadboard's ground line using a jumper wire, I repeated this with the 5v connections. My last
+                        step was
+                        to connect the Annnode to the power rail, I did this, then uploaded my program. Once it was
+                        uploaded I
                         realized my silly mistake, I had connected the LED to the Arduino 5v line, when in reality it
                         should've been pin 10. I swapped the pins and everything worked!</p>
                     <div class="photo-group">
@@ -164,8 +165,9 @@
                         <img class="medium-photo" src="../photos/lab-2/blink-schematic.png" alt="Simple Circuit 5v">
                     </div>
 
-                    <p>I then decided to make a shorter, uneven blink. I decided to have it on longer than it was
-                        off so
+                    <p>I then decided to make a shorter, uneven blink. I decided to have pin 10 stay high longer than it
+                        was
+                        low.
                         I set the low delay to 500ms, this wasn't super noticeable so I reduced to to 100ms.</p>
 
                     <video class="video-block" controls width="400">
@@ -191,7 +193,8 @@
                         </ul>
                     </div>
 
-                    <p>Now we need to convert this to control and LED through button press. Based on the diagram in
+                    <p>Now we need to add an input method to control this LED through button press. Based on the diagram
+                        in
                         our
                         lab document, pin 7 will normally be 0V as it's pulled down to ground, but due to the
                         extreme
@@ -238,7 +241,7 @@
                         Your browser does not support the video tag.
                     </video>
 
-                    <p>For the serial output part of this assignment, I choose to print the message "hiii prof" to
+                    <p>For the serial output part of this assignment, I chose to print the message "hiii prof" to
                         the
                         serial monitor. At first I used a lowercase 's' in Serial so it didn't work but after fixing
                         this
@@ -270,27 +273,33 @@
                         player will try to press the button as soon as they notice. I setup my program so that it
                         welcomes you within the setup, then inside the loop is all my game round logic. I've used
                         random
-                        before so I choose an empty pin to generate a random seed, I print ready and then start the
-                        LED
-                        delay, once the delay ends the program imediatley enters a while loop that will only
+                        before so I chose an empty pin to generate a random seed. Once the game prints ready, the timer
+                        starts, once the timer ends the program imediatley turns the LED on and then enters a while loop
+                        that will detect each buttopns state and will only
                         terminate
-                        when the button is pressed. Outside of the while loop once the button is pressed, it will
-                        output
-                        the total milliseconds it took for you to react to the LED. Lastly, the program waits 5
+                        when the button is pressed. Once a button is pressed, the while loop will exit. The program then
+                        prints the total milliseconds it took for you to react to the LED. Lastly, the program waits 5
                         second
-                        and starts another round/loop. I ran into two problems after finishing the draft of my code,
+                        and starts another round/loop.
+
+                        I ran into two problems after finishing the draft of my code,
                         I
                         called my random seed in my loop which caused the random seed to restart and call the same
                         number. My last error was that I had my startTime and millis() swapped causing an overflow
                         error. once I fixed these my game worked perfectly, I got a little to into it...</p>
 
-                    <script src="https://gist.github.com/max-pricher/2fbc7ada58b5b6c1eb906ac42be5a072.js"></script>
+                    <div class="photo-group">
+                        <script src="https://gist.github.com/max-pricher/2fbc7ada58b5b6c1eb906ac42be5a072.js"></script>
 
-                    <video class="video-block" controls width="400">
-                        <source src="../photos/lab-2/button-game.mov" type="video/mp4">
+                        <video class="video-block" controls width="400">
+                            <source src="../photos/lab-2/button-game.mov" type="video/mp4">
 
-                        Your browser does not support the video tag.
-                    </video>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+
+
 
                     <h2 class="extra-credit-header header-font">Extra Volt</h2>
 
@@ -313,7 +322,8 @@
                         variables. I also
                         removed
                         the mechanism for tracking how much time the reaction was. Once either button has been
-                        pressed, an if statement checks which button was pressed and prints a message congratulating
+                        pressed, the while loop exits, then an if statement checks which button was pressed and prints a
+                        message congratulating
                         the
                         relevant player. The program then waits 5 seconds before starting again. At first, I thought
                         I
