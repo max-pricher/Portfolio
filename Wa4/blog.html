@@ -26,6 +26,7 @@
                 <li><a href="music.html">Music</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="../software-tools/lab-4-client-side-scripting-max-pricher/submission/Calendar/index.html">Calendar</a></li>
             </ul>
         </nav>
     </header>
@@ -458,7 +459,125 @@
             </div>
 
             <div class="project-card">
-                <h2 class="header-font" id="project4">Project 4: Project Title</h2>
+                <h2 class="header-font" id="project4">Project 4: Whack-A-MoLED</h2>
+                <h2 class="part-header">Part 1:</h2>
+                <p>For this project we started exploring analog input. We started by connecting the fixed ends of the
+                    potentiometer to power and ground, then I connected the variable pin to an analog input pin on the
+                    Arduino. I then uploaded ReadAnalogInput to my arduino and observed the values changing as I turned
+                    the potentiometer.</p>
+
+                <div class="photo-group">
+                    <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                        alt="Schematic of potentiometer circuit">
+
+                    <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                        alt="Photo of arduino connected to potentiometer">
+                </div>
+
+                <p>I then used analogRead to create my own sketch. I put the read and a print statement in my code to
+                    see the values change in the serial monitor.</p>
+
+                <!-- github gist for analog read function here -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 2:</h2>
+                <p>I then used the potentiometer to create an interactive LED visual. I wired my LED's so that theyre
+                    individually controllable and each have their own resistor. I kept my arduino wired to the
+                    potentiometer and used the analog input value to control the brightness of each LED.</p>
+
+                <h3>Material list</h3>
+                <ul>
+                    <li>5 assorted LED's</li>
+                    <li>Arduino Uno</li>
+                    <li>potentiometer</li>
+                    <li>5 220&Omega; Resistors</li>
+                    <li>Breadboard</li>
+                    <li>Jumper Wires</li>
+                </ul>
+
+                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                    alt="Photo of breadboard with 5 led's connected">
+
+                <p>We use map to convert our analog input to a more manageable range for controlling which LED is on.
+                    Our Y min should be 0, if we want each LED to be controlled, at minimum our max should be 5 giving
+                    us 6 possible combinations. I created a sketch that checks the pot value every loop, ever checking
+                    this value, we convert it to a value between 0 and 5 to control which LED is on with the map()
+                    function.</p>
+
+                <!--Github gist with sketch-->
+
+                <!--Video of the 5 LED's-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 3: Jotstick for Arudino</h2>
+
+                <p>To set up my joystick I followed the wiring diagram in canvas. GND -> GND, 5V -> 5V, the SW to a
+                    digital pin. and the variable pins to analog input pins on the Arduino</p>
+
+                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                    alt="Photo arduino connected to joystick">
+
+                <p>I modified my function to include a print statement for the X, Y, and button positions. When the
+                    joystick is centered, the values are 512 for both X and Y, and 0 for the button.</p>
+
+                <!--Create a table for north, north east, east, south east, south, south west, west, north west-->
+                <table>
+
+                </table>
+                <!--Insert github gist of sketch-->
+                <!--Insert video showing joystick print vals-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 4: LIGHT EM UP WITH A JOYSTICK</h2>
+                <p> I rearranged my LED's Into a plus sign formation. I kept the joystick wired to my arudino and
+                    modified to code so that the LED's can be controlled via the joystick's X and Y values.</p>
+                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                    alt="Photo of LED's in plus formation.">
+
+                <p>I then began to create the sketch. IIFIFIFIIF</p>
+                <!--Insert github gist of sketch here-->
+                <!--Video of LED's working-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 5: BASIC LED WHACK-A-MOLE
+                </h2>
+                <p> For the final part, I kept my breadboard the same, but made a new sketch for my game code. DESIGN
+                    PROCESS HERE
+                </p>
+                <!--Insert github gist of sketch here-->
+                <!--Video of game working-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="extra-credit-header header-font">Extra Volt</h2>
+                <p>Fors the etxra credit I kept my breadboard the same, but modified all my code.
+                    |
+                </p>
+                <!--Insert github gist of sketch here-->
+                <!--Video of game working-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="project-card">
+                <h2 class="header-font" id="project5">Project 5: Project Title</h2>
+                <h2 class="part-header">Part 1:</h2>
                 <p>Project description coming soon!</p>
 
                 <h2 class="extra-credit-header header-font">Extra Volt</h2>
