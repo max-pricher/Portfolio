@@ -26,7 +26,9 @@
                 <li><a href="music.html">Music</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="../software-tools/lab-4-client-side-scripting-max-pricher/submission/Calendar/index.html">Calendar</a></li>
+                <li><a
+                        href="../software-tools/lab-4-client-side-scripting-max-pricher/submission/Calendar/index.html">Calendar</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -464,22 +466,24 @@
                 <p>For this project we started exploring analog input. We started by connecting the fixed ends of the
                     potentiometer to power and ground, then I connected the variable pin to an analog input pin on the
                     Arduino. I then uploaded ReadAnalogInput to my arduino and observed the values changing as I turned
-                    the potentiometer.</p>
+                    the potentiometer. I was a bit worried that if my pot was set to 0&Omega; resistance it would short
+                    circuit, so I did't do that...</p>
 
                 <div class="photo-group">
-                    <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                    <img class="medium-photo" src="../photos/lab-4/analog_read_schematic.png"
                         alt="Schematic of potentiometer circuit">
 
-                    <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                    <img class="medium-photo" src="../photos/lab-4/analog_read.jpg"
                         alt="Photo of arduino connected to potentiometer">
                 </div>
 
                 <p>I then used analogRead to create my own sketch. I put the read and a print statement in my code to
-                    see the values change in the serial monitor.</p>
+                    see the values change in the serial monitor. I had to set my serial monitor to 115200 as I was using
+                    an r4.</p>
 
-                <!-- github gist for analog read function here -->
+                <script src="https://gist.github.com/max-pricher/3ab3012588c5be0ea26d071afb3a9714.js"></script>
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/analog_read.mov" type="video/mp4"> <!-- MAYBE... change-->
                     Your browser does not support the video tag.
                 </video>
 
@@ -498,79 +502,99 @@
                     <li>Jumper Wires</li>
                 </ul>
 
-                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                <img class="medium-photo" src="../photos/lab-4/five_leds.jpg"
                     alt="Photo of breadboard with 5 led's connected">
 
                 <p>We use map to convert our analog input to a more manageable range for controlling which LED is on.
                     Our Y min should be 0, if we want each LED to be controlled, at minimum our max should be 5 giving
                     us 6 possible combinations. I created a sketch that checks the pot value every loop, ever checking
                     this value, we convert it to a value between 0 and 5 to control which LED is on with the map()
-                    function.</p>
+                    function. On first attempt 4/5 LED's worked, my function was struggling to hit the max value of the
+                    ADC so i bumped the max down by about 5. I fixed this, then realized I needed a way to turn the
+                    LED's off, and I needed 6 possible states with all LED's off. I modified the map function and added
+                    a loop to turn off LED's that shouldnt be active. I made those changes and everything worked
+                    smoothly after.</p>
 
                 <!--Github gist with sketch-->
+                <script src="https://gist.github.com/max-pricher/38ef9f8b44f73dc4cee5e755cd027756.js"></script>
 
                 <!--Video of the 5 LED's-->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/analog_light_control.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <h2 class="part-header">Part 3: Jotstick for Arudino</h2>
+                <h2 class="part-header">Part 3: Joystick for Arudino</h2>
 
                 <p>To set up my joystick I followed the wiring diagram in canvas. GND -> GND, 5V -> 5V, the SW to a
-                    digital pin. and the variable pins to analog input pins on the Arduino</p>
+                    digital pin. and the variable pins to analog input pins on the Arduino. I kept my LED array as
+                    original but removed the potentiometer. I used A0 and A1 for the X and Y values respectively.</p>
 
-                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
+                <img class="medium-photo" src="../photos/lab-4/joystick_connected.jpg"
                     alt="Photo arduino connected to joystick">
 
-                <p>I modified my function to include a print statement for the X, Y, and button positions. When the
-                    joystick is centered, the values are 512 for both X and Y, and 0 for the button.</p>
+                <p>I modified my function to include a print statement for the X, Y, and button positions. Initially I
+                    wasn't getting anything for the joystick (I assumed it had a built in pull-up). I modified my
+                    function to use an internal pull up. When that worked the output was flipped so I used a ! operator
+                    to correct. When the
+                    joystick is centered, the values are 512 for both X and Y which is the midpoint of our ADC range,
+                    and 0 for the button.</p>
 
                 <!--Create a table for north, north east, east, south east, south, south west, west, north west-->
                 <table>
 
                 </table>
-                <!--Insert github gist of sketch-->
-                <!--Insert video showing joystick print vals-->
+                <script src="https://gist.github.com/max-pricher/8cf74728da58a84309b7951c068f2931.js"></script>
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/joystick_test.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
                 <h2 class="part-header">Part 4: LIGHT EM UP WITH A JOYSTICK</h2>
-                <p> I rearranged my LED's Into a plus sign formation. I kept the joystick wired to my arudino and
-                    modified to code so that the LED's can be controlled via the joystick's X and Y values.</p>
-                <img class="medium-photo" src="../photos/lab-4/potentiometer-schematic.jpg"
-                    alt="Photo of LED's in plus formation.">
+                <p> I rearranged my LED's Into a plus sign formation. I kept the joystick wired to my arudino. Before I
+                    could start making the sketch, I needed to figure out which pin controlled which LED, I made a short
+                    program to cycle through each LED until I knew which was which. up was 4, down was 5, left was 6,
+                    right was 2, and middle was 2.</p>
 
-                <p>I then began to create the sketch. IIFIFIFIIF</p>
-                <!--Insert github gist of sketch here-->
+                <img class="medium-photo" src="../photos/lab-4/led_plus.jpg" alt="Photo of LED's in plus formation.">
+
+                <p>Now I could program the maping logic. I set up two if statments for
+                    the vertical and horizontal movement, and a small if for the center position. I then noticed that
+                    while my directions logically made sense, one of them was flipped. I fixed the logic and the
+                    joystick now controls the LEDs correctly</p>
+                <script src="https://gist.github.com/max-pricher/7672cb518fbb4299ce8d16fb1d8736e3.js"></script>
+
                 <!--Video of LED's working-->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/joystick_lights.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
                 <h2 class="part-header">Part 5: BASIC LED WHACK-A-MOLE
                 </h2>
-                <p> For the final part, I kept my breadboard the same, but made a new sketch for my game code. DESIGN
-                    PROCESS HERE
+                <p> For the final part, I kept my breadboard the same, but made a new sketch for my game code. I used my
+                    code from the previous part to create my moleWhacked function, this function tracks if the joystick
+                    is currently in the position of the mole, if so we move on to the next random light. It does this
+                    within a for loop 20 times until the game ends. After this, it prints the time it took to whack all
+                    20 moles. I had a bug at first where my up input was instantly hit every time, this was due to the
+                    middle point not being perfect. I widened my map to 10 points instead and icreased the interaction
+                    threshold. After this the game worked perfectly.
                 </p>
-                <!--Insert github gist of sketch here-->
+
+                <script src="https://gist.github.com/max-pricher/e68ace31c9db7cebdb434c9c26e904f0.js"></script>
                 <!--Video of game working-->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/whack_a_mole.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
                 <h2 class="extra-credit-header header-font">Extra Volt</h2>
                 <p>Fors the etxra credit I kept my breadboard the same, but modified all my code.
-                    |
                 </p>
                 <!--Insert github gist of sketch here-->
                 <!--Video of game working-->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/analog-read.mov" type="video/mp4">
+                    <source src="../photos/lab-4/.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
