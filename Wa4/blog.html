@@ -466,8 +466,7 @@
                 <p>For this project we started exploring analog input. We started by connecting the fixed ends of the
                     potentiometer to power and ground, then I connected the variable pin to an analog input pin on the
                     Arduino. I then uploaded ReadAnalogInput to my arduino and observed the values changing as I turned
-                    the potentiometer. I was a bit worried that if my pot was set to 0&Omega; resistance it would short
-                    circuit, so I did't do that...</p>
+                    the potentiometer. </p>
 
                 <div class="photo-group">
                     <img class="medium-photo" src="../photos/lab-4/analog_read_schematic.png"
@@ -541,9 +540,63 @@
                     and 0 for the button.</p>
 
                 <!--Create a table for north, north east, east, south east, south, south west, west, north west-->
-                <table>
-
+                <table border="1" style="width:100%; text-align:center; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th>Position</th>
+                            <th>X-Value (VRx)</th>
+                            <th>Y-Value (VRy)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Center (Home)</strong></td>
+                            <td>512</td>
+                            <td>510</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Up</strong></td>
+                            <td>512</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Down</strong></td>
+                            <td>512</td> 
+                            <td>1023</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Left</strong></td>
+                            <td>0</td>
+                            <td>510</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Right</strong></td>
+                            <td>1023</td>
+                            <td>510</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Top-Right (Diagonal)</strong></td>
+                            <td>1023</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Top-Left (Diagonal)</strong></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bottom-Right (Diagonal)</strong></td>
+                            <td>1023</td>
+                            <td>1023</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bottom-Left (Diagonal)</strong></td>
+                            <td>0</td>
+                            <td>1023</td>
+                        </tr>
+                    </tbody>
                 </table>
+
                 <script src="https://gist.github.com/max-pricher/8cf74728da58a84309b7951c068f2931.js"></script>
                 <video class="video-block" controls width="400">
                     <source src="../photos/lab-4/joystick_test.mov" type="video/mp4">
@@ -554,7 +607,7 @@
                 <p> I rearranged my LED's Into a plus sign formation. I kept the joystick wired to my arudino. Before I
                     could start making the sketch, I needed to figure out which pin controlled which LED, I made a short
                     program to cycle through each LED until I knew which was which. up was 4, down was 5, left was 6,
-                    right was 2, and middle was 2.</p>
+                    right was 3, and middle was 2.</p>
 
                 <img class="medium-photo" src="../photos/lab-4/led_plus.jpg" alt="Photo of LED's in plus formation.">
 
@@ -584,7 +637,7 @@
                 <script src="https://gist.github.com/max-pricher/e68ace31c9db7cebdb434c9c26e904f0.js"></script>
                 <!--Video of game working-->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/whack_a_mole.mov" type="video/mp4">
+                    <source src="../photos/lab-4/whack_a_mole.webm" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
