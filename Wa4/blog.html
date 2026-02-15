@@ -33,6 +33,10 @@
         </nav>
     </header>
 
+    <div id="lightbox">
+        <img src="" alt="Enlarged view">
+    </div>
+
     <main>
         <h1 class="main-heading header-font">Welcome to Max's Object Blog</h1>
         <h2 class="sub-heading header-font">This is the place where I will showcase my design process for my 2026
@@ -250,7 +254,7 @@
                         this
                         it worked perfectly.</p>
 
-                    <img class="medium-photo" src="../photos/lab-2/Serial-Output.png" alt="Simple Circuit diagram">
+                    <img class="large-photo" src="../photos/lab-2/Serial-Output.png" alt="Simple Circuit diagram">
 
                     <p>I modified my intital code and instead nested my pinState detection within a while loop, this
                         ensures that waiting is only printed once. </p>
@@ -462,6 +466,18 @@
 
             <div class="project-card">
                 <h2 class="header-font" id="project4">Project 4: Whack-A-MoLED</h2>
+
+                <h3>Material list</h3>
+                <ul>
+                    <li>5 assorted LED's</li>
+                    <li>Arduino Uno</li>
+                    <li>Potentiometer</li>
+                    <li>5 220&Omega; Resistors</li>
+                    <li>Breadboard</li>
+                    <li>Jumper Wires</li>
+                    <li>Analog Joystick Module</li>
+                </ul>
+
                 <h2 class="part-header">Part 1:</h2>
                 <p>For this project we started exploring analog input. We started by connecting the fixed ends of the
                     potentiometer to power and ground, then I connected the variable pin to an analog input pin on the
@@ -490,16 +506,6 @@
                 <p>I then used the potentiometer to create an interactive LED visual. I wired my LED's so that theyre
                     individually controllable and each have their own resistor. I kept my arduino wired to the
                     potentiometer and used the analog input value to control the brightness of each LED.</p>
-
-                <h3>Material list</h3>
-                <ul>
-                    <li>5 assorted LED's</li>
-                    <li>Arduino Uno</li>
-                    <li>potentiometer</li>
-                    <li>5 220&Omega; Resistors</li>
-                    <li>Breadboard</li>
-                    <li>Jumper Wires</li>
-                </ul>
 
                 <img class="medium-photo" src="../photos/lab-4/five_leds.jpg"
                     alt="Photo of breadboard with 5 led's connected">
@@ -540,9 +546,9 @@
                     and 0 for the button.</p>
 
                 <!--Create a table for north, north east, east, south east, south, south west, west, north west-->
-                <table border="1" style="width:100%; text-align:center; border-collapse: collapse;">
+                <table border="1">
                     <thead>
-                        <tr style="background-color: #f2f2f2;">
+                        <tr>
                             <th>Position</th>
                             <th>X-Value (VRx)</th>
                             <th>Y-Value (VRy)</th>
@@ -561,7 +567,7 @@
                         </tr>
                         <tr>
                             <td><strong>Down</strong></td>
-                            <td>512</td> 
+                            <td>512</td>
                             <td>1023</td>
                         </tr>
                         <tr>
@@ -665,6 +671,7 @@
     <footer>
         <p>&copy; 2026 Max's Portfolio</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

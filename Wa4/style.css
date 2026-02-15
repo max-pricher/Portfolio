@@ -100,6 +100,14 @@ nav a:visited {
     align-self: center
 }
 
+.large-photo {
+    width: 700px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    align-self: center
+}
+
 .header-font {
     font-family: "reiher-headline", sans-serif;
     font-weight: 400;
@@ -186,4 +194,92 @@ footer {
 .photo-grid img {
     width: 100%;
     height: auto;
+}
+
+.gist {
+    max-height: 500px;
+    width: 60vw;
+    overflow-y: auto;
+    /* Adds a vertical scrollbar if code is too long */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin: 20px auto 20px auto;
+}
+
+
+
+
+
+/* Styling for the Lightbox Overlay */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the Enlarged Image */
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Add a pointer cursor to your project images so users know they are clickable */
+.medium-photo {
+    cursor: zoom-in;
+    transition: opacity 0.3s;
+}
+
+.medium-photo:hover {
+    opacity: 0.8;
+}
+
+
+table {
+    background: #e8e6e6;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: "Times New Roman", Times, serif;
+    /* Traditional serif font */
+    font-size: 16px;
+}
+
+/* Thick borders for top and bottom of header, thin for others */
+th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    color: black;
+}
+
+/* Final row gets a thicker bottom border to close the table */
+tr:last-child td {
+    border-bottom: 2px solid black;
+}
+
+/* Simple left alignment for the first column */
+td:first-child,
+th:first-child {
+    text-align: left;
+    font-weight: bold;
 }
