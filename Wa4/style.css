@@ -255,7 +255,6 @@ table {
     font-size: 16px;
 }
 
-/* Thick borders for top and bottom of header, thin for others */
 th {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
