@@ -49,6 +49,7 @@
                 <li><a href="#project3">Project 3</a></li>
                 <li><a href="#project4">Project 4</a></li>
                 <li><a href="#project5">Project 5</a></li>
+                <li><a href="#project6">Project 6</a></li>
             </ul>
         </nav>
 
@@ -646,20 +647,85 @@
                     <source src="../photos/lab-4/whack_a_mole.webm" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
-                <h2 class="extra-credit-header header-font">Extra Volt</h2>
-                <p>Fors the etxra credit I kept my breadboard the same, but modified all my code.
-                </p>
-                <!--Insert github gist of sketch here-->
-                <!--Video of game working-->
-                <video class="video-block" controls width="400">
-                    <source src="../photos/lab-4/.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
 
             <div class="project-card">
-                <h2 class="header-font" id="project5">Project 5: Project Title</h2>
+                <h2 class="header-font" id="project5">Project 5: Revenge of the Synth</h2>
+                <h2 class="part-header">Part 1: wiring up the RGB LED</h2>
+                <p>RGB LED's are a bit different than common two pronged LED's. RGB have 4 pins, and either a common
+                    cathode or a common anode. The one in our kit uses a common cathode/common ground. We should use a
+                    &Omega; Ohm resistor. </p>
+
+                <!-- Insert RGB Schematic-->
+                <!--Insert RGB photo-->
+
+                <p>
+
+                </p>
+                <!-- Insert brightness sketch-->
+                <!-- insert 4 colors and values photos-->
+                <div class="photo-group">
+
+                </div>
+
+
+                <h2 class="part-header">Part 2: Dynamic color changer w/ joystick</h2>
+                <p>For this part I kept my RGB LED wired the same, but I added the joystick from our previous lab to my
+                    breadboard. </p>
+
+                <!-- sketch of joystick LED changer-->
+
+                <!--video of joystick circuit-->
+
+
+
+                <h2 class="part-header">Part 3: Musical notes with passive buzzer</h2>
+                <p>When I was in geen1400, my first mini-project used an ultrasonic sensor, a servo, and a passive
+                    buzzer as a rubegoldberg step, when it succesfully passed my buzzer played hotline bling. Connected
+                    the positive pin to a digital pin and the negative to ground through a 220&Omega; Ohm resistor.</p>
+
+                <!-- Photo of passive buzzer wired-->
+
+                <p>I then created a sketch where the Arduino beeps the buzzer at a frequency of 440 Hz for a second,
+                    then stops for a second in a loop. </p>
+
+                <!--Github gist of sketch-->
+                <!--Video of buzzer beeping-->
+
+                <p>Ive used the pitches library before so I already had it downloaded. i made sure to include <include
+                        pitches.h> in the header of my sketch.</p>
+
+                <!--Photo of pitches.h open in arduino IDE-->
+
+                <p>I then modified my old sketch to utilize the pitches.h library </p>
+
+                <!--Sketch of using pitches.h-->
+                <!--Video of buzzer using pitches.h-->
+
+
+                <h2 class="part-header">Part 4: Melody from the buzzer</h2>
+
+                <p>Then, I made an arduino sketch that plays the melody from our lab instructions using my passive
+                    buzzer.</p>
+
+                <!--Github gist of melody sketch-->
+                <!--Video of melody sketch working-->
+
+                <p>Lastly, I made my own melody and converted it into arduino code.</p>
+
+                <!-- video of custom melody playing-->
+
+                <!--Table of note sequence-->
+
+                <h2 class="extra-credit-header header-font">Extra Volt: Music Visualizer</h2>
+                <p>For the extra volt, I created a music visualizer using the pitch, time, and note to control RGB
+                    brightness. </p>
+
+                <!--Video of led visualizer working with both melodies-->
+            </div>
+
+            <div class="project-card">
+                <h2 class="header-font" id="project6">Project 6: Project Title</h2>
                 <h2 class="part-header">Part 1:</h2>
                 <p>Project description coming soon!</p>
 
