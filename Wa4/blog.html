@@ -654,68 +654,162 @@
                 <h2 class="part-header">Part 1: wiring up the RGB LED</h2>
                 <p>RGB LED's are a bit different than common two pronged LED's. RGB have 4 pins, and either a common
                     cathode or a common anode. The one in our kit uses a common cathode/common ground. We should use a
-                    &Omega; Ohm resistor. </p>
+                    220&Omega; Ohm resistor. At first I thought I would be able to use one resistor on the common
+                    cathode, I looked up what the best aproach was, and it was stated to balance the current across each
+                    pin, it's best to put resistors on the annodes. I noticed the red one was a bit dimmer than the
+                    rest, I wasn't sure of the exact moddle so I couldnt determine the forward voltage, so I swapped red
+                    to a 150&Omega; Ohm resistor and the brightness seemed equal. </p>
 
-                <!-- Insert RGB Schematic-->
-                <!--Insert RGB photo-->
-
-                <p>
-
-                </p>
-                <!-- Insert brightness sketch-->
-                <!-- insert 4 colors and values photos-->
                 <div class="photo-group">
+                    <img class="medium-photo" src="../photos/lab-5/RGB_Schematic.png"
+                        alt="Schematic of RGB diode and Arudino.">
 
+                    <img class="medium-photo" src="../photos/lab-5/photo_of_RGB.jpg"
+                        alt="Photo RGB diode on breadboard">
                 </div>
+                <p>
+                    I then modified the example code to control the brightness of each LED. The sketch below is an
+                    example of how I produced one of the colors.
+                </p>
 
+                <script src="https://gist.github.com/max-pricher/e205850f64b4065d1e2b6fb93334804c.js"></script>
+
+                <div class="photo-group">
+                    <img class="medium-photo" src="../photos/lab-5/RGB_Blue.jpg" alt="Photo RGB showing blue color">
+                    <img class="medium-photo" src="../photos/lab-5/RGB_Red.jpg" alt="Photo RGB showing red color">
+                    <img class="medium-photo" src="../photos/lab-5/RGB_Green.jpg" alt="Photo RGB showing green color">
+                    <img class="medium-photo" src="../photos/lab-5/RGB_Yellow.jpg" alt="Photo RGB showing yellow color">
+                </div>
 
                 <h2 class="part-header">Part 2: Dynamic color changer w/ joystick</h2>
                 <p>For this part I kept my RGB LED wired the same, but I added the joystick from our previous lab to my
-                    breadboard. </p>
+                    breadboard. I wrote some debugging code to see if my analog values and mapped brightness looked
+                    right, but I noticed my Y values werent reaching the max of 1023, as I kept looking at it, I noticed
+                    the Y values were never steady, always varying randomly, this is how I knew the pin was floating, I
+                    checked and I had accidentally swapped analogY with the joysticks push button. I swapped the wires
+                    back and my analog reads looked much better. </p>
 
-                <!-- sketch of joystick LED changer-->
+                <script src="https://gist.github.com/max-pricher/c8f211874fae6b1a640d1a6fe64d7de5.js"></script>
 
-                <!--video of joystick circuit-->
-
-
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-5/LED_Joystick.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
                 <h2 class="part-header">Part 3: Musical notes with passive buzzer</h2>
                 <p>When I was in geen1400, my first mini-project used an ultrasonic sensor, a servo, and a passive
-                    buzzer as a rubegoldberg step, when it succesfully passed my buzzer played hotline bling. Connected
+                    buzzer as a rubegoldberg step, when it succesfully passed my buzzer played hotline bling. I wired my
+                    passive buzzer to the GND and a digital PWM pin on my arduino.
+
+                    Connected
                     the positive pin to a digital pin and the negative to ground through a 220&Omega; Ohm resistor.</p>
 
-                <!-- Photo of passive buzzer wired-->
+                <img class="medium-photo" src="../photos/lab-5/Passive_Buzzer.jpg" alt="Passive buzzer photo">
 
-                <p>I then created a sketch where the Arduino beeps the buzzer at a frequency of 440 Hz for a second,
-                    then stops for a second in a loop. </p>
+                <p>I then modified the example code to play a note at 440Hz instead and to stay off for a second after
+                    buzzing. </p>
 
-                <!--Github gist of sketch-->
-                <!--Video of buzzer beeping-->
+                <script src="https://gist.github.com/max-pricher/a3c68170f8b0ff437aa31f666282781e.js"></script>
 
-                <p>Ive used the pitches library before so I already had it downloaded. i made sure to include <include
-                        pitches.h> in the header of my sketch.</p>
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-5/Buzzer_Beep.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-                <!--Photo of pitches.h open in arduino IDE-->
+                <p>Ive used the pitches library before so I already had it downloaded but I downloaded the new version
+                    anyways. I moved the header file to the same folder as my part 4 sketch. </p>
 
-                <p>I then modified my old sketch to utilize the pitches.h library </p>
+                <img class="large-photo" src="../photos/lab-5/pitches_sketch.png" alt="Passive buzzer photo">
 
-                <!--Sketch of using pitches.h-->
-                <!--Video of buzzer using pitches.h-->
+                <p>I then modified my old sketch to utilize the pitches.h library and choose to play note CS1 </p>
 
+                <script src="https://gist.github.com/max-pricher/1b22740525c68bc4bed4a6eb844a1a3b.js"></script>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-5/pitches.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
                 <h2 class="part-header">Part 4: Melody from the buzzer</h2>
 
-                <p>Then, I made an arduino sketch that plays the melody from our lab instructions using my passive
-                    buzzer.</p>
+                <p>I utilized the example code to recreate the melody from the table, once I uplaoded my code I
+                    imeditaley noticed it was the death star theme. </p>
 
-                <!--Github gist of melody sketch-->
-                <!--Video of melody sketch working-->
+                <script src="https://gist.github.com/max-pricher/a73ce302aa5b8cc14237e3d3ef9061d9.js"></script>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-5/star_wars.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
                 <p>Lastly, I made my own melody and converted it into arduino code.</p>
 
-                <!-- video of custom melody playing-->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-5/custom_melody.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-                <!--Table of note sequence-->
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Note</th>
+                            <th>Duration</th>
+                            <th>Dotted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C4</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G3</strong></td>
+                            <td>1/8</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G3</strong></td>
+                            <td>1/8</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>A#3 / Bb3</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G3</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rest (0)</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B3</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C4</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C4</strong></td>
+                            <td>1/4</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C4</strong></td>
+                            <td>1/2</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <h2 class="extra-credit-header header-font">Extra Volt: Music Visualizer</h2>
                 <p>For the extra volt, I created a music visualizer using the pitch, time, and note to control RGB
