@@ -236,7 +236,7 @@
                         the
                         LED state. I also added some print statments to print the button state just to make sure
                         everything was working. I made sure to add a slight delay to my loop to avoid any bugs.
-                        unfortunatley when I uplaoded the code the LED was on which shouldnt be the case, I added
+                        unfortunatley when I uploded the code the LED was on which shouldnt be the case, I added
                         some
                         print statments to give me an idea of what section of the if statment I was in. After this I
                         realized that I was passing the pin number to the if statment, rather than my pinState bool
@@ -653,8 +653,10 @@
                 <h2 class="header-font" id="project5">Project 5: Revenge of the Synth</h2>
                 <h2 class="part-header">Part 1: wiring up the RGB LED</h2>
                 <p>RGB LED's are a bit different than common two pronged LED's. RGB have 4 pins, and either a common
-                    cathode or a common anode. The one in our kit uses a common cathode/common ground. We should use a
-                    220&Omega; Ohm resistor. At first I thought I would be able to use one resistor on the common
+                    cathode or a common anode. The one in our kit uses a common cathode/common ground. I've used a
+                    variety of differnet LED's and I can't recall a signle time where 220&Omega; didnt work, so I
+                    started with a 220&Omega; Ohm resistor. At first I thought I would be able to use one resistor on
+                    the common
                     cathode, I looked up what the best aproach was, and it was stated to balance the current across each
                     pin, it's best to put resistors on the annodes. I noticed the red one was a bit dimmer than the
                     rest, I wasn't sure of the exact moddle so I couldnt determine the forward voltage, so I swapped red
@@ -674,7 +676,7 @@
 
                 <script src="https://gist.github.com/max-pricher/e205850f64b4065d1e2b6fb93334804c.js"></script>
 
-                <div class="photo-group">
+                <div class="photo-grid">
                     <img class="medium-photo" src="../photos/lab-5/RGB_Blue.jpg" alt="Photo RGB showing blue color">
                     <img class="medium-photo" src="../photos/lab-5/RGB_Red.jpg" alt="Photo RGB showing red color">
                     <img class="medium-photo" src="../photos/lab-5/RGB_Green.jpg" alt="Photo RGB showing green color">
@@ -687,7 +689,7 @@
                     right, but I noticed my Y values werent reaching the max of 1023, as I kept looking at it, I noticed
                     the Y values were never steady, always varying randomly, this is how I knew the pin was floating, I
                     checked and I had accidentally swapped analogY with the joysticks push button. I swapped the wires
-                    back and my analog reads looked much better. </p>
+                    back and my analog reads looked much better.</p>
 
                 <script src="https://gist.github.com/max-pricher/c8f211874fae6b1a640d1a6fe64d7de5.js"></script>
 
@@ -732,7 +734,7 @@
 
                 <h2 class="part-header">Part 4: Melody from the buzzer</h2>
 
-                <p>I utilized the example code to recreate the melody from the table, once I uplaoded my code I
+                <p>I utilized the example code to recreate the melody from the table, once I uploded my code I
                     imeditaley noticed it was the death star theme. </p>
 
                 <script src="https://gist.github.com/max-pricher/a73ce302aa5b8cc14237e3d3ef9061d9.js"></script>
@@ -810,12 +812,6 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <h2 class="extra-credit-header header-font">Extra Volt: Music Visualizer</h2>
-                <p>For the extra volt, I created a music visualizer using the pitch, time, and note to control RGB
-                    brightness. </p>
-
-                <!--Video of led visualizer working with both melodies-->
             </div>
 
             <div class="project-card">
