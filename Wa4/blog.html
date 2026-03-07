@@ -817,7 +817,158 @@
             </div>
 
             <div class="project-card">
-                <h2 class="header-font" id="project6">Project 6: Project Title</h2>
+                <h2 class="header-font" id="project6">Project 6: Fine Motor Control</h2>
+                <div class=" material-list">
+                    <h3>Material list</h3>
+                    <ul>
+                        <li>Power Delivery Breadboard</li>
+                        <li>9v</li>
+                        <li>Arduino Uno R4</li>
+                        <li>Push button</li>
+                        <li>Servo motor</li>
+                        <li>l293D motor driver</li>
+                        <li>Potentiometer</li>
+                        <li>Breadboard</li>
+                        <li>Blade and motor</li>
+                        <li>Jumper wires</li>
+                        <li>Resistors</li>
+                    </ul>
+                </div>
+                <h2 class="part-header">Part 0: Setting up power</h2>
+                <p>For this project I needed to set up my breadboard first, we need extra power for motor control so I
+                    added a power module with a 9V battery</p>
+
+                <img class="small-photo" src="../photos/lab-6/3.3v-Rail-Test.webp"
+                    alt="Power delivery breadboard photo">
+
+                <h2 class="part-header">Part 1: Wiring this servo</h2>
+
+                <p>On my arduino R4, pins 3,5,6,9 and 10 have a ~, meaning they're PMW compatible. I connected my servos
+                    digital pin to pin 3, then I wired 5V and GND. </p>
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="photo of servo wiring">
+
+                <p>I then connected an arm to my servo, I've used the Servo Library before so I already had it
+                    installed.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="Screenshot of servo library">
+
+                <p>Now that everything was set up, I uploaded the Labs example code to my arduino. The servo worked
+                    perfectly! </p>
+
+                <!--Video of Servo working -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 2: Controlling the servo</h2>
+
+                <p>Now my goal was to control the Servo with a potentiometer. I wired my servo to the 5V, GND, and an
+                    analog pin for the wiper.</p>
+
+                <!-- Picture of potentiometer circuit-->
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
+                    alt="Photo of potentiometer circuit">
+
+                <p>I used analogRead() and map() to read the potetiometer value and map it to the servo's position. Now
+                    the servo moves as I turn the potentiometer.</p>
+
+                <!--Github gist of servo potetiometer-->
+
+                <!--Video of Servo pot -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+
+                <p>Next, I wanted to control the speed of a sweeping servo with a potentiometer. I used the first
+                    example code and modified it to map the potetiometer values to 5-50ms. </p>
+
+                <!--Github gist of pot modifying servo speed-->
+
+                <!--Video of pot speed -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 3: DC Motor and motor driver</h2>
+                <p>For this part I switched to a brushless motor, I connected it directly to the 5v and GND of my power
+                    delivery board to test if it worked.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
+                    alt="Photo brsuhless motor connected to power delivery board">
+
+                <!--Video of fan spinng -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <p>I then got a L293D dc motor driver to control the motor. The wiring was a bit annoying but I got
+                    everything set up.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
+                    alt="Photo brsuhless motor connected to driver module">
+
+                <p>I then used the example code and finsihed writing the backward() function.</p>
+
+
+                <!--Github gist of completed backward function-->
+                <!--Video of complete function  -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <p>I then added two more functions to the example code. expand later</p>
+                <!--Github gist of added functions-->
+                <!--Video of complete function  -->
+
+
+                <h2 class="part-header">Part 4: Table-Top Fan</h2>
+
+                <p>To create a mini desktop fan, i grabbed a zip tie and attached it around the brushless motor and the
+                    servo arm.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="Photo of zip tie motors">
+
+                <p>I then wired everything back into our original circuit.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
+                    alt="motor fan connected to circuit">
+
+                <p>Lastly, I needed to write an arduino sketch to move the servo slowly back and forth, and keep the DC
+                    motor at 70% speed. To get 70% speed i set my analogWrite value to 178 (70% of 255).</p>
+
+                <!-- Github gist of complete fan sketch-->
+                <!--Video of complete fan  -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+
+
+
+                <h2 class="extra-credit-header header-font">Extra Volt: Table-top fan Or Wind Propelled car</h2>
+
+
+                <p>For this part, I added our analog joystick to the cirucit and modified the sketch to read the analog
+                    values and map them to the servo direction AND the DC motor speed/direction.</p>
+
+                <!-- Github gist of joystick fan sketch-->
+                <!--Video of complete fan & joystick  -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            </div>
+
+            <div class="project-card">
+                <h2 class="header-font" id="project7">Project 7: Project Title</h2>
                 <h2 class="part-header">Part 1:</h2>
                 <p>Project description coming soon!</p>
 
