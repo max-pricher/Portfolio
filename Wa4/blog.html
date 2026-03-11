@@ -847,13 +847,16 @@
                     digital pin to pin 3, then I wired 5V and GND. </p>
                 <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="photo of servo wiring">
 
+
                 <p>I then connected an arm to my servo, I've used the Servo Library before so I already had it
                     installed.</p>
 
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="Screenshot of servo library">
+                <img class="medium-photo" src="../photos/lab-6/lab-6-library-photo.png"
+                    alt="Screenshot of servo library">
 
-                <p>Now that everything was set up, I uploaded the Labs example code to my arduino. The servo worked
-                    perfectly! </p>
+                <p>Now that everything was set up, I uploaded the Labs example code to my arduino. This is unfortunatley
+                    when I found out my servo was broken... Eryn, this will not be my best lab. My servo has worked
+                    previously! I made a whole rube goldberg machine with it but unfortunately it's broken now.</p>
 
                 <!--Video of Servo working -->
                 <video class="video-block" controls width="400">
@@ -873,7 +876,7 @@
                 <p>I used analogRead() and map() to read the potetiometer value and map it to the servo's position. Now
                     the servo moves as I turn the potentiometer.</p>
 
-                <!--Github gist of servo potetiometer-->
+                <script src="https://gist.github.com/max-pricher/5589bfb959423728da0d22cc9bbdba85.js"></script>
 
                 <!--Video of Servo pot -->
                 <video class="video-block" controls width="400">
@@ -885,7 +888,7 @@
                 <p>Next, I wanted to control the speed of a sweeping servo with a potentiometer. I used the first
                     example code and modified it to map the potetiometer values to 5-50ms. </p>
 
-                <!--Github gist of pot modifying servo speed-->
+                <script src="https://gist.github.com/max-pricher/ae95b6dbea87ae762bc62dd99f158d40.js"></script>
 
                 <!--Video of pot speed -->
                 <video class="video-block" controls width="400">
@@ -894,17 +897,9 @@
                 </video>
 
                 <h2 class="part-header">Part 3: DC Motor and motor driver</h2>
-                <p>For this part I switched to a brushless motor, I connected it directly to the 5v and GND of my power
-                    delivery board to test if it worked.</p>
+                <p>For this part I was going to switch to a brushless motor, but then i found out I really had a stepper
+                    motor that looked like DC.</p>
 
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
-                    alt="Photo brsuhless motor connected to power delivery board">
-
-                <!--Video of fan spinng -->
-                <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
 
                 <p>I then got a L293D dc motor driver to control the motor. The wiring was a bit annoying but I got
                     everything set up.</p>
@@ -915,7 +910,7 @@
                 <p>I then used the example code and finsihed writing the backward() function.</p>
 
 
-                <!--Github gist of completed backward function-->
+                <script src="https://gist.github.com/max-pricher/cb90829b6abc5412298d309d8082cc5d.js"></script>
                 <!--Video of complete function  -->
                 <video class="video-block" controls width="400">
                     <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
@@ -923,7 +918,7 @@
                 </video>
 
                 <p>I then added two more functions to the example code. expand later</p>
-                <!--Github gist of added functions-->
+                <script src="https://gist.github.com/max-pricher/5971d0fc43ba60da4005f8e685cad466.js"></script>
                 <!--Video of complete function  -->
 
 
@@ -942,18 +937,14 @@
                 <p>Lastly, I needed to write an arduino sketch to move the servo slowly back and forth, and keep the DC
                     motor at 70% speed. To get 70% speed i set my analogWrite value to 178 (70% of 255).</p>
 
-                <!-- Github gist of complete fan sketch-->
+                <script src="https://gist.github.com/max-pricher/faf430c7df5dbde6241ee1a4c0da5ea0.js"></script>
                 <!--Video of complete fan  -->
                 <video class="video-block" controls width="400">
                     <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-
-
-
                 <h2 class="extra-credit-header header-font">Extra Volt: Table-top fan Or Wind Propelled car</h2>
-
 
                 <p>For this part, I added our analog joystick to the cirucit and modified the sketch to read the analog
                     values and map them to the servo direction AND the DC motor speed/direction.</p>
