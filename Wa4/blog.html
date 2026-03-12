@@ -50,6 +50,7 @@
                 <li><a href="#project4">Project 4</a></li>
                 <li><a href="#project5">Project 5</a></li>
                 <li><a href="#project6">Project 6</a></li>
+                <li><a href="#project7">Project 7</a></li>
             </ul>
         </nav>
 
@@ -838,14 +839,13 @@
                 <p>For this project I needed to set up my breadboard first, we need extra power for motor control so I
                     added a power module with a 9V battery</p>
 
-                <img class="small-photo" src="../photos/lab-6/3.3v-Rail-Test.webp"
-                    alt="Power delivery breadboard photo">
+                <img class="small-photo" src="../photos/lab-6/power_delivery.jpg" alt="Power delivery breadboard photo">
 
                 <h2 class="part-header">Part 1: Wiring this servo</h2>
 
                 <p>On my arduino R4, pins 3,5,6,9 and 10 have a ~, meaning they're PMW compatible. I connected my servos
                     digital pin to pin 3, then I wired 5V and GND. </p>
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="photo of servo wiring">
+                <img class="medium-photo" src="../photos/lab-6/servo_wired.jpg" alt="photo of servo wiring">
 
 
                 <p>I then connected an arm to my servo, I've used the Servo Library before so I already had it
@@ -854,13 +854,15 @@
                 <img class="medium-photo" src="../photos/lab-6/lab-6-library-photo.png"
                     alt="Screenshot of servo library">
 
-                <p>Now that everything was set up, I uploaded the Labs example code to my arduino. This is unfortunatley
-                    when I found out my servo was broken... Eryn, this will not be my best lab. My servo has worked
-                    previously! I made a whole rube goldberg machine with it but unfortunately it's broken now.</p>
+                <p>Now that everything was set up, I uploaded the Labs example code to my arduino. Initially, I thought
+                    my servo was broken as my power delivery board looked to be working perfectly, I felt the servo
+                    trying but not moving so I had assumed I broke it with my last project. I had a friend give me her
+                    servo so I could test (hence why this is late) and her's also didn't work... I switched 9V and,
+                    guess what?</p>
 
                 <!--Video of Servo working -->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    <source src="../photos/lab-6/servo_working.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
 
@@ -870,8 +872,7 @@
                     analog pin for the wiper.</p>
 
                 <!-- Picture of potentiometer circuit-->
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
-                    alt="Photo of potentiometer circuit">
+                <img class="medium-photo" src="../photos/lab-6/pot_servo.jpg" alt="Photo of potentiometer circuit">
 
                 <p>I used analogRead() and map() to read the potetiometer value and map it to the servo's position. Now
                     the servo moves as I turn the potentiometer.</p>
@@ -880,7 +881,7 @@
 
                 <!--Video of Servo pot -->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    <source src="../photos/lab-6/pot_servo.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
 
@@ -892,47 +893,60 @@
 
                 <!--Video of pot speed -->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    <source src="../photos/lab-6/pot_servo_delay.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
 
                 <h2 class="part-header">Part 3: DC Motor and motor driver</h2>
-                <p>For this part I was going to switch to a brushless motor, but then i found out I really had a stepper
-                    motor that looked like DC.</p>
+                <p>For this part I got my DC motor from my kit (zoe's kit) and plugged it straight into the voltage
+                    lines. It spun at full speed</p>
 
-
-                <p>I then got a L293D dc motor driver to control the motor. The wiring was a bit annoying but I got
-                    everything set up.</p>
-
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
+                <img class="medium-photo" src="../photos/lab-6/fan_wired.jpg"
                     alt="Photo brsuhless motor connected to driver module">
 
-                <p>I then used the example code and finsihed writing the backward() function.</p>
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/fan_spinning.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+                <p>I then got a L293D dc motor driver to control the motor. The wiring was a bit annoying but I got
+                    everything set up. when i first tested it, I assumed it was working.</p>
+
+                <img class="medium-photo" src="../photos/lab-6/motor_wired.jpg"
+                    alt="Photo brsuhless motor connected to driver module">
+
+                <p>But after I used the example code and finsihed writing the backward() function. I tested and saw that
+                    my fan would only spin when the forward function wasrunning, this led me to notice I wired one of
+                    the wires wrong yet somehow my fan was stillg grounded. I moved it over and it worked perfectly</p>
 
 
                 <script src="https://gist.github.com/max-pricher/cb90829b6abc5412298d309d8082cc5d.js"></script>
                 <!--Video of complete function  -->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    <source src="../photos/lab-6/fan_backwards.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
 
-                <p>I then added two more functions to the example code. expand later</p>
+                <p>I then added two more functions to the example code following the provided instructions.</p>
                 <script src="https://gist.github.com/max-pricher/5971d0fc43ba60da4005f8e685cad466.js"></script>
                 <!--Video of complete function  -->
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-6/ramp_up_down.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
 
 
                 <h2 class="part-header">Part 4: Table-Top Fan</h2>
 
-                <p>To create a mini desktop fan, i grabbed a zip tie and attached it around the brushless motor and the
+                <p>To create a mini desktop fan, i grabbed a bendable wire and twisted it around the brushless motor and
+                    the
                     servo arm.</p>
 
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png" alt="Photo of zip tie motors">
+                <img class="medium-photo" src="../photos/lab-6/zip_tie_fan.jpg" alt="Photo of zip tie motors">
 
                 <p>I then wired everything back into our original circuit.</p>
 
-                <img class="medium-photo" src="../photos/lab-6/servo_schematic.png"
-                    alt="motor fan connected to circuit">
+                <img class="medium-photo" src="../photos/lab-6/motor_wired.jpg" alt="motor fan connected to circuit">
 
                 <p>Lastly, I needed to write an arduino sketch to move the servo slowly back and forth, and keep the DC
                     motor at 70% speed. To get 70% speed i set my analogWrite value to 178 (70% of 255).</p>
@@ -940,19 +954,7 @@
                 <script src="https://gist.github.com/max-pricher/faf430c7df5dbde6241ee1a4c0da5ea0.js"></script>
                 <!--Video of complete fan  -->
                 <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
-                <h2 class="extra-credit-header header-font">Extra Volt: Table-top fan Or Wind Propelled car</h2>
-
-                <p>For this part, I added our analog joystick to the cirucit and modified the sketch to read the analog
-                    values and map them to the servo direction AND the DC motor speed/direction.</p>
-
-                <!-- Github gist of joystick fan sketch-->
-                <!--Video of complete fan & joystick  -->
-                <video class="video-block" controls width="400">
-                    <source src="../photos/lab-6/servo_working.mp4" type="video/mp4">
+                    <source src="../photos/lab-6/desk_fan.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
 
