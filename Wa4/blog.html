@@ -51,6 +51,7 @@
                 <li><a href="#project5">Project 5</a></li>
                 <li><a href="#project6">Project 6</a></li>
                 <li><a href="#project7">Project 7</a></li>
+                <li><a href="#project8">Project 8</a></li>
             </ul>
         </nav>
 
@@ -961,7 +962,92 @@
             </div>
 
             <div class="project-card">
-                <h2 class="header-font" id="project7">Project 7: Project Title</h2>
+                <h2 class="header-font" id="project7">Project 7: Processing</h2>
+                <h2 class="part-header">Part 0:</h2>
+                <p>I've never used processing before so I had to download it for mac. I read the tutorial and got
+                    started.</p>
+
+                <img class="medium-photo" src="../photos/lab-7/processing_screenshot.png"
+                    alt="processing open on my computer.">
+
+                <h2 class="part-header">Part 1:</h2>
+                <p>For the first part I copied the example sketch into processing and rain it. It worked perfectly. </p>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-7/processing_example.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+                <p>I then modified the sketch so that the eliptical is brown and the ellipse was wider.</p>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-7/processing_color_change.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 2: Processing With Arduino </h2>
+
+                <p>I wired up my joystick like in lab 2. I forgot to take a good photo, so this is the photo of my later
+                    circuit. </p>
+                <!--Image of joystick wiring-->
+                <img class="medium-photo" src="../photos/lab-7/joystick_wired.jpg" alt="Photo of joystick wiring">
+
+                <!--Schematic of joystick wiring-->
+                <img class="medium-photo" src="../photos/lab-7/Joystick-Schematic.png"
+                    alt="Fritzing diagram of joystick wiring">
+
+                <p>I wrote a basic sketch to read the analog and digital values
+                    then print them in the format provided. At first I wasnt getting the right values, everything was
+                    super
+                    low. I tried it with the processing sketch i modified, I couldnt figure out the port at first, I
+                    tried com5 and 5. But then I read it has to be the exact port name, once I did that i saw i was
+                    unable to modify my ellipse fully. I unplugged ground and the values became super random e.g.
+                    floating, so the
+                    ground wasnt the problem,
+                    unplugging the 5v li1ne changed almost nothing, i tested the wires i used and one was no longer
+                    conductive of course. After I confirmed my arduino sketch worked, I closed the serial monitor and
+                    attempted to connect processing with the arduino.</p>
+
+                <script src="https://gist.github.com/max-pricher/da3ab83421813e739b3e78ff819982d5.js"></script>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-7/processing_joystick.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2 class="part-header">Part 3: Creating your own visualization. </h2>
+                <p>At first I just modified the intial ellipse sketch. I added an ultrasonic sensor, Potentiometer, and
+                    kept the joystick. I modified the pot to be the color, the sensor distance as size, and the joystick
+                    click as a "dont clear" trigger.</p>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-7/part_3.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+                <p> I then found a really cool example of a 3d cube, it looked simple so i modified the code to change
+                    the cube aspects with my inputs.</p>
+                <h2 class="part-header">Example Sketch:</h2>
+                <script src="https://gist.github.com/max-pricher/2317741e5224d7fcaeb779bbec33b704.js"></script>
+
+                <video class="video-block" controls width="400">
+                    <source src="../photos/lab-7/processing_joystick.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+
+
+                <h2 class="part-header">Arduino Sketch: </h2>
+                <script src="https://gist.github.com/max-pricher/44c946720dc062cbbdd5a229af693059.js"></script>
+
+                <h2 class="part-header">Processing Sketch: </h2>
+                <script src="https://gist.github.com/max-pricher/bd97b4f91f20e290c2ddac74c4bfb7bc.js"></script>
+
+                <h2 class="extra-credit-header header-font">Extra Volt</h2>
+                <p>Extra Volt description coming soon!</p>
+            </div>
+
+            <div class="project-card">
+                <h2 class="header-font" id="project8">Project 8: Project Title</h2>
                 <h2 class="part-header">Part 1:</h2>
                 <p>Project description coming soon!</p>
 
